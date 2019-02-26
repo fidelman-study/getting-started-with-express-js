@@ -21,7 +21,8 @@
   "homepage": "https://github.com/fidelman-study/getting-started-with-express-js#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

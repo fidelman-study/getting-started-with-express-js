@@ -14,14 +14,11 @@
    })
  })
 
+ app.set('views', './views')
+ app.set('view engine', 'pug')
+
  app.get('/', (_req, res) => {
-  let buffer = ''
-
-  users.forEach(user => {
-    buffer += `<a href="/user/${user.username}">${user.name.full}</a><br>`
-  })
-
-  res.send(buffer)
+  res.render('index', { users })
 })
 
 app.get(/big.*/, (_req, _res, next) => {
@@ -29,7 +26,7 @@ app.get(/big.*/, (_req, _res, next) => {
   next()
 })
 
-app.get('/user/:username', (req, res) => {
+app.get('/users/:username', (req, res) => {
   const { username } = req.params
   const user = users.find(user => user.username === username)
 
