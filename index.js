@@ -16,14 +16,10 @@
 
  app.set('views', './views')
  app.set('view engine', 'pug')
+ app.use(express.static('images'))
 
  app.get('/', (_req, res) => {
   res.render('index', { users })
-})
-
-app.get(/big.*/, (_req, _res, next) => {
-  console.log('It is very big 💪')
-  next()
 })
 
 app.get('/users/:username', (req, res) => {

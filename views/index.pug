@@ -4,7 +4,8 @@ html(lang="en")
     title= "User Index"
   body
     h1 Pug 🐶
-    ul
+    div
       each user in users
-        li
+        div
+          img(src=`${user.username}_sm.jpg`)
           a(href=`/users/${user.username}`)= user.name.full
